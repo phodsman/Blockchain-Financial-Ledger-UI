@@ -70,8 +70,6 @@ class Record:
 @dataclass
 class Block:
 
-    # @TODO
-    # Rename the `data` attribute to `record`, and set the data type to `Record`
     record = Record
 
     creator_id: int
@@ -168,21 +166,21 @@ pychain = setup()
 # 4. Add an input area where you can get a value for `amount` from the user.
 # 5. As part of the Add Block button functionality, update `new_block` so that `Block` consists of an attribute named `record`, which is set equal to a `Record` that contains the `sender`, `receiver`, and `amount` values. The updated `Block`should also include the attributes for `creator_id` and `prev_hash`.
 
-# @TODO:
+
 # Delete the `input_data` variable from the Streamlit interface.
 input_data = st.text_input("Block Data")
 
-# @TODO:
+
 # Add an input area where you can get a value for `sender` from the user.
-# YOUR CODE HERE
+sender = st.text_input("Sender")
 
-# @TODO:
+
 # Add an input area where you can get a value for `receiver` from the user.
-# YOUR CODE HERE
+receiver = st.text_input("Receiver")
 
-# @TODO:
+
 # Add an input area where you can get a value for `amount` from the user.
-# YOUR CODE HERE
+amount = st.text_input("Amount")
 
 if st.button("Add Block"):
     prev_block = pychain.chain[-1]
@@ -193,13 +191,13 @@ if st.button("Add Block"):
     # which is set equal to a `Record` that contains the `sender`, `receiver`,
     # and `amount` values
     new_block = Block(
+        record = Record,
         data=input_data,
         creator_id=42,
         prev_hash=prev_block_hash
     )
 
     pychain.add_block(new_block)
-    st.balloons()
 
 ################################################################################
 # Streamlit Code (continues)
