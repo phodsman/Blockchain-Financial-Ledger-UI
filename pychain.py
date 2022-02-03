@@ -70,7 +70,7 @@ class Record:
 @dataclass
 class Block:
 
-    record = Record
+    record: Record
 
     creator_id: int
     prev_hash: str = "0"
@@ -168,7 +168,7 @@ pychain = setup()
 
 
 # Delete the `input_data` variable from the Streamlit interface.
-input_data = st.text_input("Block Data")
+
 
 
 # Add an input area where you can get a value for `sender` from the user.
@@ -192,7 +192,6 @@ if st.button("Add Block"):
     # and `amount` values
     new_block = Block(
         record = Record,
-        data=input_data,
         creator_id=42,
         prev_hash=prev_block_hash
     )
