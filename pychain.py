@@ -50,7 +50,7 @@ import hashlib
 # Create a Record Data Class that consists of the `sender`, `receiver`, and
 # `amount` attributes
 @dataclass
-def Record:
+class Record:
     sender: str
     receiver: str
     amount: float
