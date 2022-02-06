@@ -55,7 +55,6 @@ class Block:
 
 # PyChain datclass
 
-
 @dataclass
 class PyChain:
     chain: List[Block]
